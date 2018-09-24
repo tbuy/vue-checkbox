@@ -1,7 +1,7 @@
 {
-  "name": "vue-selected",
+  "name": "vue-input-selected",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "",
   "author": "snowy <wqy445@gmail.com>",
   "private": true,
   "scripts": {

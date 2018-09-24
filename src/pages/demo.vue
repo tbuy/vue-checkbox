@@ -1,5 +1,7 @@
 <template>
+<div class="demo">
     <selected :answerNo="answerNo" :question="question"></selected>
+</div>
 </template>
 
 <script>
@@ -22,6 +24,22 @@
                         type: 1,
                         options: [
                             'tt',
+                            'yyyfyy'
+                        ]
+                    },
+                    {
+                        title: '题目3',
+                        type: 1,
+                        options: [
+                            'tt',
+                            'rreerr',
+                        ]
+                    },
+                    {
+                        title: '题目4',
+                        type: 2,
+                        options: [
+                            'tt',
                             'rreerr',
                             'yyyfyy'
                         ]
@@ -31,12 +49,19 @@
         },
         components: {
             selected,
-        }
+        },
     }
 
 </script>
 
 <style scoped>
-
+.demo {
+    margin: 30px auto;
+    border: 1px solid #CCC;
+    width: 300px;
+    padding: 20px 30px;
+    height: 400px;
+    overflow: auto;
+}
 
 </style>
