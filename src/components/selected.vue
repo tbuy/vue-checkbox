@@ -24,9 +24,6 @@
 
 <script>
     export default {
-        data() {
-            return {}
-        },
         props: {
             questionNo: {
                 type: Array,
@@ -43,12 +40,6 @@
                 default: () => [],
                 required: true
             },
-        },
-        computed: {
-
-        },
-        methods: {
-
         },
         mounted() {
             this.question.forEach(item => {
