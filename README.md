@@ -2,8 +2,6 @@
 
 > 基于vue简单的选项组件，使用于单选或者多选答题类型的表单。答题数据需要根据api结构传递给组件，选项结果回通过question中selected属性返回给用户。
 
-(https://github.com/tbuy/vue-checkbox/tree/master/src/assets/demo)
-
 ## 安装
 
 ```
