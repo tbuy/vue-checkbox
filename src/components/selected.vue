@@ -19,6 +19,7 @@
                 </div>
             </div>
         </div>
+        <div class="submit" @click="submit" :style="{backgroundColor: isBtnHeight? 'red': '#ccc'}">提交</div>
     </div>
 </template>
 
@@ -40,6 +41,26 @@
                 default: () => [],
                 required: true
             },
+        },
+        computed: {
+            isBtnHeight() {
+                return this.question.every(item => item.selected && item.selected.length)
+            }
+        },
+        methods: {
+            submit() {
+                var _reault = [];
+                this.question.forEach(item => {
+                    _reault.push(item.selected)
+                    if (item.type == 1) {
+                        this.$set(item, 'selected', '')
+                    } else {
+                        this.$set(item, 'selected', [])
+                    }
+                })
+
+                this.$emit('submit', _reault)
+            }
         },
         mounted() {
             this.question.forEach(item => {
@@ -126,6 +147,17 @@
         font-size: 14px;
         vertical-align: middle;
         margin-left: 5px;
+    }
+
+    .submit {
+        background-color: red;
+        cursor: pointer;
+        width: 100px;
+        height: 30px;
+        line-height: 25px;
+        text-align: center;
+        color: #fff;
+        margin: 0 auto;
     }
 
 </style>

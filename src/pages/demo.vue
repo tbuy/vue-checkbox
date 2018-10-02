@@ -1,9 +1,17 @@
 <template>
     <div class="demo">
-        <selected :answerNo="answerNo" :question="question"></selected>
+        <div class="component">
+            <selected :answerNo="answerNo" :question="question" @submit="submit"></selected>
+        </div>
+        <div class="reault">
+            <div class="h3">选择结果: </div>
+            <div v-for="(item,index) in reault" :key="item.id" class="item">
+                <span>{{ index + 1 }}. </span>
+                <span>{{ item }}</span>
+            </div>
+        </div>
     </div>
 </template>
-
 <script>
     import selected from '../components/selected.vue'
     export default {
@@ -45,11 +53,17 @@
                         ]
                     }
                 ],
+                reault: []
             }
         },
         components: {
             selected,
         },
+        methods: {
+            submit(val) {
+                this.reault = val;
+            }
+        }
     }
 
 </script>
@@ -58,10 +72,28 @@
     .demo {
         margin: 30px auto;
         border: 1px solid #CCC;
-        width: 300px;
+        width: 600px;
         padding: 20px 30px;
-        height: 400px;
+        box-sizing: border-box;
+        height: 530px;
         overflow: auto;
+        display: flex;
+    }
+
+    .component {
+        width: 50%;
+        border-right: 1px solid #CCC;
+        box-sizing: border-box;
+    }
+
+    .reault {
+        width: 50%;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+
+    .item {
+        margin-top: 10px;
     }
 
 </style>
